@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8C4">
+
+    <!-- Fondo del menu: se muestra solo si existe res/drawable/fondo_menu -->
+    <ImageView
+        android:id="@+id/imgMenuBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:contentDescription="Fondo" />
+
+    <!-- Velo suave para que el texto se lea sobre la imagen -->
+    <View
+        android:id="@+id/menuVeil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33FFFFFF"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Cargando..." />
+
+            <!-- ESCENA: cuarto + decoraciones + Bob -->
+            <FrameLayout
+                android:id="@+id/roomScene"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#FFE0B2">
+
+                <ImageView
+                    android:id="@+id/imgRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:contentDescription="Cuarto" />
+
+                <!-- Decoracion: techo -->
+                <ImageView
+                    android:id="@+id/imgDecoCeiling"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/decoCeiling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:textSize="44sp"
+                    android:visibility="gone" />
+
+                <!-- Decoracion: pared -->
+                <ImageView
+                    android:id="@+id/imgDecoWall"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="16dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/decoWall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="16dp"
+                    android:textSize="44sp"
+                    android:visibility="gone" />
+
+                <!-- Decoracion: piso -->
+                <ImageView
+                    android:id="@+id/imgDecoFloor"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/decoFloor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="44sp"
+                    android:visibility="gone" />
+
+                <!-- Bob (imagen o emoji de respaldo) -->
+                <ImageView
+                    android:id="@+id/imgPet"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone"
+                    android:contentDescription="Mascota" />
+                <TextView
+                    android:id="@+id/tvPet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="96sp"
+                    android:text="🧽" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tvMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textColor="#B00020"
+                android:text="¡Hola! Cuida a Bob." />
+
+            <LinearLayout
+                android:id="@+id/barsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:columnCount="2">
+
+                <Button android:id="@+id/btnFeed" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Alimentar 🍔" />
+                <Button android:id="@+id/btnPlay" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Jugar 🎉" />
+                <Button android:id="@+id/btnSleep" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Dormir 💤" />
+                <Button android:id="@+id/btnClean" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Bañar 🧼" />
+                <Button android:id="@+id/btnHeal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Curar 💊" />
+                <Button android:id="@+id/btnTrain" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Entrenar 🥋" />
+                <Button android:id="@+id/btnCook" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Cocinar Cangreburger" />
+                <Button android:id="@+id/btnJelly" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Cazar medusas 🪼" />
+            </GridLayout>
+
+            <Button android:id="@+id/btnShop" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Tienda e inventario 🛒" />
+            <Button android:id="@+id/btnMissions" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Misiones y progreso 🏆" />
+            <Button android:id="@+id/btnMemory" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Minijuego: Memoria 🧠" />
+            <Button android:id="@+id/btnReflex" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Minijuego: Reflejos 🪼" />
+            <Button android:id="@+id/btnRoom" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Habitación 🏠" />
+            <Button android:id="@+id/btnSettings" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Configuración ⚙" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
